@@ -1,0 +1,592 @@
+/* ========== GLOBAL RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* ========== NAVBAR ========== */
+.nav {
+  background: linear-gradient(135deg, #6a5acd, #7b68ee);
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav h2 {
+  font-size: 22px;
+}
+
+.nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+/* ========== DARK MODE TOGGLE BUTTON ========== */
+.dark-btn {
+  margin-left: 15px;
+  padding: 8px 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: 0.3s;
+}
+
+.dark-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ========== CONTAINER ========== */
+.container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* ========== CARD ========== */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+}
+
+/* ========== MOOD SELECTOR ========== */
+.mood-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.mood-buttons button {
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #eef1f7;
+  transition: all 0.3s ease;
+}
+
+.mood-buttons button:hover {
+  background-color: #6a5acd;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* ========== CHART ========== */
+.chart-container {
+  margin-top: 30px;
+}
+
+/* ========== HISTORY PAGE ========== */
+.history-item {
+  padding: 12px 15px;
+  background: #f1f3f6;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ========== JOURNAL ========== */
+textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  resize: none;
+  margin-top: 15px;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #6a5acd;
+}
+
+button.save-btn {
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: #6a5acd;
+  border: none;
+  color: white;
+  border-radius: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button.save-btn:hover {
+  background: #5848c2;
+}
+
+/* ========== PAGE HEADINGS ========== */
+h2, h3 {
+  margin-bottom: 15px;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mood-buttons {
+    justify-content: center;
+  }
+}
+/* ========== DARK MODE ========== */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Navbar */
+body.dark .nav {
+  background: linear-gradient(135deg, #1f1f3a, #2b2b52);
+}
+
+body.dark .nav a {
+  color: #e0e0e0;
+}
+
+/* Cards */
+body.dark .card {
+  background: #1e1e1e;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Mood buttons */
+body.dark .mood-buttons button {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+
+body.dark .mood-buttons button:hover {
+  background-color: #6a5acd;
+  color: white;
+}
+
+/* History items */
+body.dark .history-item {
+  background: #2a2a2a;
+}
+
+/* Textarea */
+body.dark textarea {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+/* Save button */
+body.dark .save-btn {
+  background: #7b68ee;
+}
+
+body.dark .save-btn:hover {
+  background: #6a5acd;
+}
+body.dark .streak-card {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+}
+body.dark .calendar-day {
+  background: #2a2a2a;
+}
+body.dark .signin-btn {
+  background: #2a2a2a;
+  color: white;
+}
+
+body.dark .input {
+  background: #1e1e1e;
+  color: white;
+  border: 1px solid #444;
+}
+body.dark .logout-btn {
+  background: #b00020;
+}
+body.dark .logout-nav-btn {
+  background: #b00020;
+}
+/* DARK MODE */
+body.dark .calendar-day {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark .calendar-day.header {
+  background: #2a2a2a;
+}
+
+body.dark .calendar-day.completed {
+  background: #2e7d32;
+  color: white;
+}
+/* DARK MODE */
+body.dark .calendar-day {
+  background: #2a2a2a;
+}
+
+body.dark .calendar-day.completed {
+  background: #2e7d32;
+}
+body.dark .calendar-day.today {
+  border-color: #8ab4f8;
+}
+body.dark .calendar-day.selected {
+  outline-color: #8ab4f8;
+}
+body.dark .day-number {
+  color: #e0e0e0;
+}
+/* ========== MOOD STREAK ========== */
+.streak-card {
+  text-align: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #222;
+}
+
+.streak-count {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+/* SIMPLE CALENDAR */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendar-day {
+  background: #f1f3f6;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+/* SIGN IN */
+.signin-btn {
+  margin-left: 15px;
+  padding: 8px 16px;
+  background: white;
+  color: #6a5acd;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signin-btn:hover {
+  background: #f1f1f1;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.signin-submit {
+  width: 100%;
+  padding: 12px;
+  background: #6a5acd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.logout-btn {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  background: crimson;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+/* NAVBAR LOGOUT BUTTON */
+.logout-nav-btn {
+  margin-left: 10px;
+  padding: 8px 14px;
+  background: crimson;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.logout-nav-btn:hover {
+  background: #b00020;
+}
+.history-item small {
+  color: #666;
+}
+
+body.dark .history-item small {
+  color: #bbb;
+}
+.history-item small {
+  color: #666;
+}
+
+body.dark .history-item small {
+  color: #bbb;
+}
+/* CALENDAR GRID */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.calendar-day {
+  padding: 8px;
+  text-align: center;
+  border-radius: 6px;
+  background: #f1f3f6;
+  font-size: 14px;
+}
+
+/* COMPLETED DAY (GREEN) */
+.calendar-day.completed {
+  background: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+
+/* CALENDAR HEADER */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.calendar-header button {
+  padding: 6px 10px;
+  border: none;
+  background: #6a5acd;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* GRID */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+/* DAY CELLS */
+.calendar-day {
+  height: 80px;
+  border: 1px solid #e0e0e0;
+  padding: 6px;
+  font-size: 14px;
+  text-align: right;
+  background: #fff;
+}
+
+/* WEEK HEADER */
+.calendar-day.header {
+  background: #f4f6f8;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* EMPTY CELLS */
+.calendar-day.empty {
+  background: #f9f9f9;
+}
+
+/* COMPLETED DAY (GREEN) */
+.calendar-day.completed {
+  background: #c8e6c9;
+  color: #1b5e20;
+  font-weight: bold;
+}
+.calendar-day.today {
+  border: 2px solid #1a73e8; /* Google blue */
+  font-weight: bold;
+}
+
+/* If today is also completed */
+.calendar-day.completed.today {
+  background: #81c784;
+  border: 2px solid #1a73e8;
+}
+.calendar-day.selected {
+  outline: 3px solid #1a73e8;
+}
+
+/* MOOD DETAILS SECTION */
+.mood-details {
+  margin-top: 20px;
+}
+/* DAY NUMBER */
+.day-number {
+  font-size: 14px;
+  text-align: right;
+}
+
+/* MOOD EMOJI IN CALENDAR */
+.day-emoji {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
+/* ===== CALENDAR CONTAINER ===== */
+.calendar-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.calendar-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.calendar-header button {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.calendar-header button:hover {
+  background: #f1f3f6;
+}
+
+/* ===== GRID ===== */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+/* ===== WEEK HEADER ===== */
+.calendar-day.header {
+  text-align: center;
+  font-weight: 600;
+  padding: 8px 0;
+  background: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ===== DAY CELL ===== */
+.calendar-day {
+  height: 90px;
+  border: 1px solid #e0e0e0;
+  padding: 6px;
+  position: relative;
+  cursor: pointer;
+  background: white;
+}
+
+.calendar-day:hover {
+  background: #f4f6f8;
+}
+
+/* EMPTY CELLS */
+.calendar-day.empty {
+  background: #fafafa;
+  cursor: default;
+}
+
+/* DAY NUMBER */
+.day-number {
+  font-size: 13px;
+  text-align: right;
+  font-weight: 500;
+}
+
+/* EMOJI */
+.day-emoji {
+  font-size: 22px;
+  text-align: center;
+  margin-top: 18px;
+}
+
+/* ===== TODAY ===== */
+.calendar-day.today {
+  border: 2px solid #1a73e8;
+}
+
+/* ===== COMPLETED DAY ===== */
+.calendar-day.completed {
+  background: #e6f4ea;
+}
+
+/* ===== SELECTED DAY ===== */
+.calendar-day.selected {
+  outline: 3px solid #1a73e8;
+}
+
+/* ===== DETAILS PANEL ===== */
+.mood-details {
+  margin-top: 20px;
+}
+
+/* ===== DARK MODE ===== */
+body.dark .calendar-day {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark .calendar-day.header {
+  background: #2a2a2a;
+}
+
+body.dark .calendar-day.completed {
+  background: #2e7d32;
+}
+
+body.dark .calendar-header button:hover {
+  background: #333;
+}
+.card ul {
+  margin-left: 20px;
+}
+
+.card li {
+  margin-bottom: 8px;
+}
